@@ -14,6 +14,13 @@ def predict(X, theta):
     return X_b @ theta
 
 
+def normalize(X):
+    """Normalize features to zero mean and unit variance."""
+    mean = np.mean(X, axis=0)
+    std = np.std(X, axis=0)
+    return (X - mean) / (std + 1e-8), mean, std
+
+
 def mean_squared_error(y_true, y_pred):
     """Calculate Mean Squared Error between true and predicted values."""
     return np.mean((y_true - y_pred) ** 2)
