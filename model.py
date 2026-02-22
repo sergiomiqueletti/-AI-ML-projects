@@ -14,6 +14,11 @@ def predict(X, theta):
     return X_b @ theta
 
 
+def mean_squared_error(y_true, y_pred):
+    """Calculate Mean Squared Error between true and predicted values."""
+    return np.mean((y_true - y_pred) ** 2)
+
+
 if __name__ == "__main__":
     np.random.seed(42)
     X = 2 * np.random.rand(100, 1)
@@ -21,6 +26,10 @@ if __name__ == "__main__":
 
     theta = train_model(X, y)
     print(f"Model parameters: intercept={theta[0][0]:.2f}, slope={theta[1][0]:.2f}")
+
+    y_pred = predict(X, theta)
+    mse = mean_squared_error(y, y_pred)
+    print(f"Training MSE: {mse:.4f}")
 
     X_new = np.array([[0], [1], [2]])
     predictions = predict(X_new, theta)
