@@ -1,0 +1,27 @@
+__pycache__/
+*.ipynb_checkpoints
+*.csv
+*.h5
+*.pkl
+
+# Virtual environments
+venv/
+.env/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data directories
+data/
+datasets/
+
+# Model artifacts
+models/
+*.pt
+*.pth
+*.onnx
